@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <title>Mitt CV</title>
+</head>
+
+<body>
+    <nav><a href="/">Hem</a> <a href="/add">Lägg till</a> <a href="/about">Om</a></nav>
+    <main>
+        <h1>Kurser</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kod</th>
+                        <th class="left">Namn</th>
+                        <th>Progression</th>
+                        <th>Kursplan</th>
+                        <th>Hantera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- data skickas ut från databasen till tabellrader -->
+                    <tbody>
+                        <% courses.forEach(course=> { %>
+                            <tr>
+                                <td>
+                                <%= course.coursecode %>
+                            </td>
+                            <td class="left">
+                                <%= course.coursename %>
+                            </td>
+                            <td>
+                                <%= course.progression %>
+                            </td>
+                            <td><a href="<%= course.syllabus %>" target="_blank">Visa</a></td>
+                            <td><a href="/delete/<%= course.id %>" class="btn-delete"
+                                    onclick="return confirm('Säker?')">🗑️</a></td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>

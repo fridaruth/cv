@@ -1,7 +1,7 @@
 const { Client } = require("pg");
 require("dotenv").config();
 
-// anslut till db
+// anslut till databas
 const client = new Client({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
@@ -22,6 +22,7 @@ client.connect((err) => {
     }
 });
 
+// rensa och skapa tabellstruktur
 async function createTables() {
     try {
         const res = await client.query(`
