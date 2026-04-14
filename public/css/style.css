@@ -35,7 +35,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #6b5c3e;
+    color: #e59c0a;
+    text-decoration: underline;
 }
 
 main {
@@ -50,7 +51,7 @@ main {
 h1, h2 {
     text-align: center;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.02rem;
 }
 
@@ -149,7 +150,7 @@ input:focus, select:focus {
 }
 
 button {
-    background: #b4a17a;
+    background: #bdae91;
     color: #f6f6f6;
     border: none;
     padding: 1rem;
@@ -162,7 +163,7 @@ button {
 }
 
 button:hover {
-    background-color: #7a705c;
+    background-color: #e59c0a;
 }
 
 /* inställningar för större skärmar */
