@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <title>Lägg till kurs</title>
+</head>
+
+<body>
+    <nav><a href="/">Hem</a> <a href="/add">Lägg till</a> <a href="/about">Om</a></nav>
+    <main>
+        <h2>Lägg till ny kurs</h2>
+        <% if(error) { %>
+            <div class="error">
+                <%= error %>
+            </div>
+            <% } %>
+                <form action="/add" method="POST">
+                    <input type="text" name="coursecode" placeholder="Kurskod">
+                    <input type="text" name="coursename" placeholder="Kursnamn">
+                    <select name="progression">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                    <input type="text" name="syllabus" placeholder="Länk till kursplan">
+                    <button type="submit">Lägg till kurs</button>
+                </form>
+    </main>
+</body>
+
+</html>
