@@ -34,7 +34,7 @@ nav a {
     transition: 0.3s;
 }
 
-nav a:hover {
+a:hover {
     color: #e59c0a;
     text-decoration: underline;
 }
@@ -82,7 +82,6 @@ th {
 
 td {
     padding: 1.2rem 1rem;
-    border-bottom: 1px solid #f5f2ed;
     text-align: center;
     font-family: "Merriweather", serif;
     font-size: 0.85rem;
@@ -98,8 +97,7 @@ tr:hover {
 }
 
 a {
-    text-transform: uppercase;
-    color:#842a3b;
+    color:#322222;
 }
 
 .left {
@@ -115,9 +113,15 @@ a {
     font-size: 0.9rem;
 }
 
+.edit-delete-cell {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+}
+
 .btn-delete {
-    text-decoration: none;
-    transition: transform 0.2s;
+    font-size: 1.2rem;
     text-decoration: none;
     display: inline-block;
 }
@@ -176,7 +180,6 @@ button:hover {
 
     th, td {
         padding: 1.2rem 1rem;
-        font-size: 1rem;
     }
 
     .table-container {

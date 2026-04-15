@@ -68,6 +68,33 @@ app.post("/add", async (req, res) => {
     }
 });
 
+// redigera kurs
+app.get("/edit/:id", async (req, res) => {
+    const id = req.params.id;
+    try {
+        const result = await client.query("SELECT * FROM courses WHERE id = $1", [id]);
+            res.render("edit", { course: result.rows[0], error: "" });
+    } catch (err) {
+        res.redirect("/")
+    }
+});
+
+// uppdatera redigerad kurs
+app.post("/edit/:id", async (req, res) => {
+    const id = req.params.id;
+    const { coursecode, coursename, syllabus, progression } = req.body;
+
+    try {
+        await client.query(
+            "UPDATE courses SET coursecode=$1, coursename=$2, syllabus=$3, progression=$4 WHERE id=$5",
+            [coursecode, coursename, syllabus, progression, id]
+        );
+        res.redirect("/");
+    } catch (err) {
+        res.render("edit", { course: req.body, error: "Kunde inte uppdatera." });
+    }
+});
+
 // radera kurs baserat på unikt ID
 app.get("/delete/:id", async (req, res) => {
     const id = req.params.id; 

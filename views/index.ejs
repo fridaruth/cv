@@ -45,8 +45,9 @@
                             <td>
                                 <%= course.progression %>
                             </td>
-                            <td><a href="<%= course.syllabus %>" target="_blank">Visa</a></td>
-                            <td><a href="/delete/<%= course.id %>" class="btn-delete"
+                            <td><a href="<%= course.syllabus %>" target="_blank">Kursplan</a></td>
+                            <td class="edit-delete-cell"><a href="/edit/<%= course.id %>" class="btn-delete">✏️ </a>
+                                <a href="/delete/<%= course.id %>" class="btn-delete"
                                     onclick="return confirm('Säker?')">🗑️</a></td>
                         </tr>
                         <% }) %>
