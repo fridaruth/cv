@@ -14,10 +14,12 @@
 </head>
 
 <body>
-       <nav><h1>Mitt CV</h1>
-        <a href="/">Hem</a> 
-        <a href="/add">Lägg till</a> 
-        <a href="/about">Om</a></nav>
+    <nav>
+        <h1>Mitt CV</h1>
+        <a href="/">Hem</a>
+        <a href="/add">Lägg till</a>
+        <a href="/about">Om</a>
+    </nav>
     <main>
         <h2>Kurser</h2>
         <div class="table-container">
@@ -33,10 +35,10 @@
                 </thead>
                 <tbody>
                     <!-- data skickas ut från databasen till tabellrader -->
-                    <tbody>
-                        <% courses.forEach(course=> { %>
-                            <tr>
-                                <td>
+                <tbody>
+                    <% courses.forEach(course=> { %>
+                        <tr>
+                            <td>
                                 <%= course.coursecode %>
                             </td>
                             <td class="left">
@@ -48,7 +50,8 @@
                             <td><a href="<%= course.syllabus %>" target="_blank">Kursplan</a></td>
                             <td class="edit-delete-cell"><a href="/edit/<%= course.id %>" class="btn-delete">✏️ </a>
                                 <a href="/delete/<%= course.id %>" class="btn-delete"
-                                    onclick="return confirm('Säker?')">🗑️</a></td>
+                                    onclick="return confirm('Säker?')">🗑️</a>
+                            </td>
                         </tr>
                         <% }) %>
                 </tbody>

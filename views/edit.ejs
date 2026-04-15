@@ -14,11 +14,13 @@
 </head>
 
 <body>
-        <nav><h1>Mitt CV</h1>
-        <a href="/">Hem</a> 
-        <a href="/add">Lägg till</a> 
-        <a href="/about">Om</a></nav>
-         <main>
+    <nav>
+        <h1>Mitt CV</h1>
+        <a href="/">Hem</a>
+        <a href="/add">Lägg till</a>
+        <a href="/about">Om</a>
+    </nav>
+    <main>
         <h2>Redigera kurs</h2>
         <% if(error) { %>
             <div class="error">
@@ -29,9 +31,9 @@
                     <input type="text" name="coursecode" value="<%= course.coursecode %>">
                     <input type="text" name="coursename" value="<%= course.coursename %>">
                     <select name="progression">
-                        <option value="A" <%= course.progression === 'A' ? 'selected' : '' %>>A</option>
-                        <option value="B" <%= course.progression === 'B' ? 'selected' : '' %>>B</option>
-                        <option value="C" <%= course.progression === 'C' ? 'selected' : '' %>>C</option>
+                        <option value="A" <%=course.progression==='A' ? 'selected' : '' %>>A</option>
+                        <option value="B" <%=course.progression==='B' ? 'selected' : '' %>>B</option>
+                        <option value="C" <%=course.progression==='C' ? 'selected' : '' %>>C</option>
                     </select>
                     <input type="text" name="syllabus" value="<%= course.syllabus %>">
                     <button type="submit">Uppdatera kurs</button>
